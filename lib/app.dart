@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
+import 'package:w_store/utils/constants/colors.dart';
+import 'package:w_store/utils/theme/theme.dart';
 
 
 class App extends StatelessWidget {
@@ -9,9 +11,16 @@ class App extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
+      themeMode: ThemeMode.system,
+      theme: WAppTheme.lightTheme,
+      darkTheme: WAppTheme.darkTheme,
+      /// Show loader or Circular progress indicator meanwhile authentication repository is deciding to show relevant screen.
       home: const Scaffold(
+        backgroundColor: WColors.primary,
         body: Center(
-          child: Text("Awesome! Project Structure  is set up and running. \nHappy Coding", textAlign: TextAlign.center,),
+          child: CircularProgressIndicator(
+            color: Colors.white,
+          ),
         ),
       ),
     );
