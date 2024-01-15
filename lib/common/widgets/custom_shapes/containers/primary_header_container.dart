@@ -14,8 +14,10 @@ class WPrimaryHeaderContainer extends StatelessWidget {
     return WCurvedEdgeWidget(
       child: Container(
         color: WColors.primary,
-        padding: const EdgeInsets.only(bottom: 0),
-        child: Stack(
+        padding: const EdgeInsets.all(0),
+        child: SizedBox(
+          height: 400,
+          child: Stack(
             children: [
               Positioned(
                 top: -150,
@@ -35,6 +37,7 @@ class WPrimaryHeaderContainer extends StatelessWidget {
             ],
           ),
         ),
+      ),
     );
   }
 }
