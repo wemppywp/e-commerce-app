@@ -14,7 +14,6 @@ class SignupScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        leading: const Icon(Iconsax.arrow_left),
       ),
       body: SingleChildScrollView(
         child: Padding(
