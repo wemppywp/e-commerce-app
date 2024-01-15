@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
+import 'package:w_store/features/authentication/screens/password_configuration/forget_password.dart';
 import 'package:w_store/features/authentication/screens/signup/signup_screen.dart';
+import 'package:w_store/navigation_menu.dart';
 import 'package:w_store/utils/constants/sizes.dart';
 import 'package:w_store/utils/constants/text_strings.dart';
 
@@ -52,17 +54,22 @@ class WLoginForm extends StatelessWidget {
 
                   /// forget password
                   TextButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Get.to(() => ForgetPassword());
+                      },
                       child: const Text(WTexts.forgetPassword))
                 ],
               ),
               const SizedBox(
                 height: WSizes.spaceBtwItems,
               ),
+              /// Sign in button
               SizedBox(
                   width: double.infinity,
                   child: ElevatedButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Get.to(() => NavigationMenu());
+                      },
                       child: const Text(WTexts.signIn))),
               const SizedBox(
                 height: WSizes.spaceBtwItems,
