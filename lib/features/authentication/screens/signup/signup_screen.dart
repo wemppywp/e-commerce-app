@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:get/get_utils/get_utils.dart';
 import 'package:iconsax/iconsax.dart';
+import 'package:w_store/common/widgets/login_signup/form_divider.dart';
+import 'package:w_store/common/widgets/login_signup/social_buttons.dart';
+import 'package:w_store/features/authentication/screens/signup/widgets/signup_form.dart';
 import 'package:w_store/utils/constants/sizes.dart';
 import 'package:w_store/utils/constants/text_strings.dart';
 
@@ -9,24 +13,38 @@ class SignupScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
+      appBar: AppBar(
+        leading: const Icon(Iconsax.arrow_left),
+      ),
       body: SingleChildScrollView(
         child: Padding(
-          padding: EdgeInsets.all(WSizes.defaultSpace),
+          padding: const EdgeInsets.all(WSizes.defaultSpace),
           child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               /// Title
-              Text(WTexts.signupTitle, style: Theme.of(context).textTheme.headlineMedium,),
-              const SizedBox(height: WSizes.spaceBtwSections,),
+              Text(
+                WTexts.signupTitle,
+                style: Theme.of(context).textTheme.headlineMedium,
+              ),
+              const SizedBox(
+                height: WSizes.spaceBtwSections,
+              ),
 
               /// form
-              Form(child: Column(
-                children: [
-                  TextFormField(
-                    decoration: InputDecoration(labelText: WTexts.firstName, prefixIcon: Icon(Iconsax.user)),
-                  )
-                ],
-              ))
+              const WSignupForm(),
+
+              /// divider
+              WFormDivider(dividerText: WTexts.orSignUpWith.capitalize!),
+              const SizedBox(
+                height: WSizes.spaceBtwInputFields,
+              ),
+
+              /// social button
+              const WSocialButtons(),
+              const SizedBox(
+                height: WSizes.spaceBtwInputFields,
+              ),
             ],
           ),
         ),
@@ -34,3 +52,5 @@ class SignupScreen extends StatelessWidget {
     );
   }
 }
+
+
