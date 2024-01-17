@@ -4,7 +4,9 @@ import 'package:w_store/common/widgets/custom_shapes/containers/search_container
 import 'package:w_store/common/widgets/texts/section_heading.dart';
 import 'package:w_store/features/shop/screens/home/widgets/home_appbar.dart';
 import 'package:w_store/features/shop/screens/home/widgets/home_categories.dart';
+import 'package:w_store/features/shop/screens/home/widgets/promo_slider.dart';
 import 'package:w_store/utils/constants/colors.dart';
+import 'package:w_store/utils/constants/image_strings.dart';
 import 'package:w_store/utils/constants/sizes.dart';
 import 'package:w_store/utils/constants/text_strings.dart';
 
@@ -45,6 +47,12 @@ class HomeScreen extends StatelessWidget {
                   )
                 ],
               ),
+            ),
+
+            /// Body
+            Padding(
+              padding: const EdgeInsets.all(WSizes.defaultPadding),
+              child: WPromoSlider(banners: [WImages.promoBanner1, WImages.promoBanner2, WImages.promoBanner3],),
             )
           ],
         ),
@@ -52,6 +60,10 @@ class HomeScreen extends StatelessWidget {
     );
   }
 }
+
+
+
+
 
 
 

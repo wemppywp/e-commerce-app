@@ -23,14 +23,14 @@ class WPrimaryHeaderContainer extends StatelessWidget {
                 top: -150,
                 right: -250,
                 child: WCircularContainer(
-                  backgroungColor: WColors.textWhite.withOpacity(0.1),
+                  backgroundColor: WColors.textWhite.withOpacity(0.1),
                 ),
               ),
               Positioned(
                 top: 100,
                 right: -300,
                 child: WCircularContainer(
-                  backgroungColor: WColors.textWhite.withOpacity(0.1),
+                  backgroundColor: WColors.textWhite.withOpacity(0.1),
                 ),
               ),
               child
