@@ -63,6 +63,10 @@ class WTexts {
   // -- Home
   static const String homeAppbarTitle = "Good day for shopping";
   static const String homeAppbarSubTitle = "Wemppy Wantri Putra";
+  static const String searchText = "Search in Store";
+
+  // -- Additional
+  static const String popularCategories = "Popular Categories";
 
 
 }
