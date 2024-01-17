@@ -78,7 +78,7 @@ class WLoginForm extends StatelessWidget {
                   width: double.infinity,
                   child: OutlinedButton(
                       onPressed: () {
-                        Get.offAll(SignupScreen());
+                        Get.to(SignupScreen());
                       },
                       child: const Text(WTexts.createAccount))),
               const SizedBox(
