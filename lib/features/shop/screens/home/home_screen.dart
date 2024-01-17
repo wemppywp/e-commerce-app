@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:w_store/common/widgets/custom_shapes/containers/primary_header_container.dart';
 import 'package:w_store/common/widgets/custom_shapes/containers/search_container.dart';
+import 'package:w_store/common/widgets/layouts/grid_layout.dart';
+import 'package:w_store/common/widgets/products/product_card_vertical.dart';
 import 'package:w_store/common/widgets/texts/section_heading.dart';
 import 'package:w_store/features/shop/screens/home/widgets/home_appbar.dart';
 import 'package:w_store/features/shop/screens/home/widgets/home_categories.dart';
@@ -52,7 +54,17 @@ class HomeScreen extends StatelessWidget {
             /// Body
             Padding(
               padding: const EdgeInsets.all(WSizes.defaultPadding),
-              child: WPromoSlider(banners: [WImages.promoBanner1, WImages.promoBanner2, WImages.promoBanner3],),
+              child: Column(
+                children: [
+                  /// Promo Slider
+                  WPromoSlider(banners: [WImages.promoBanner1, WImages.promoBanner2, WImages.promoBanner3],),
+                  SizedBox(height: WSizes.spaceBtwSections,),
+
+                  /// Popular Product
+                  WGridLayout(itemCount: 2, itemBuilder: (_, index) => const WProductCardVertical(),),
+
+                ],
+              ),
             )
           ],
         ),
@@ -60,6 +72,8 @@ class HomeScreen extends StatelessWidget {
     );
   }
 }
+
+
 
 
 
