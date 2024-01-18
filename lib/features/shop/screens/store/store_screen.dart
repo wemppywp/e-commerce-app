@@ -2,18 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:w_store/common/widgets/appbar/appbar.dart';
 import 'package:w_store/common/widgets/appbar/tabbar.dart';
 import 'package:w_store/common/widgets/brands/brand_card.dart';
-import 'package:w_store/common/widgets/brands/brand_show_case.dart';
-import 'package:w_store/common/widgets/custom_shapes/containers/rounded_container.dart';
 import 'package:w_store/common/widgets/custom_shapes/containers/search_container.dart';
-import 'package:w_store/common/widgets/images/circular_image.dart';
 import 'package:w_store/common/widgets/layouts/grid_layout.dart';
 import 'package:w_store/common/widgets/products_cart/cart_menu_icon.dart';
-import 'package:w_store/common/widgets/texts/brand_title_text_with_verified_icon.dart';
 import 'package:w_store/common/widgets/texts/section_heading.dart';
 import 'package:w_store/features/shop/screens/store/widgets/category_tab.dart';
 import 'package:w_store/utils/constants/colors.dart';
-import 'package:w_store/utils/constants/enums.dart';
-import 'package:w_store/utils/constants/image_strings.dart';
 import 'package:w_store/utils/constants/sizes.dart';
 import 'package:w_store/utils/helpers/helper_functions.dart';
 
