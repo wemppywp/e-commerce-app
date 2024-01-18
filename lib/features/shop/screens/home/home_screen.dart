@@ -60,6 +60,10 @@ class HomeScreen extends StatelessWidget {
                   WPromoSlider(banners: [WImages.promoBanner1, WImages.promoBanner2, WImages.promoBanner3],),
                   SizedBox(height: WSizes.spaceBtwSections,),
 
+                  /// Heading
+                  WSectionHeading(title: WTexts.popularProducts, textColor: WColors.black, onPressed: (){},),
+                  SizedBox(height: WSizes.spaceBtwItems,),
+
                   /// Popular Product
                   WGridLayout(itemCount: 2, itemBuilder: (_, index) => const WProductCardVertical(),),
 

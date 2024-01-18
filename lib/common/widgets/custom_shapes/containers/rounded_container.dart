@@ -21,7 +21,7 @@ class WRoundedContainer extends StatelessWidget {
     this.child,
     this.showBorder = false,
     this.borderColor = WColors.borderPrimary,
-    this.backgroundColor = WColors.white,
+    this.backgroundColor = WColors.light,
     this.padding,
     this.margin});
 

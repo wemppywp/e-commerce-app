@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:w_store/utils/constants/colors.dart';
 import 'package:w_store/utils/constants/sizes.dart';
+import 'package:w_store/utils/helpers/helper_functions.dart';
 
 class WSectionHeading extends StatelessWidget {
   final Color? textColor;
@@ -10,7 +12,7 @@ class WSectionHeading extends StatelessWidget {
   const WSectionHeading({
     super.key,
     this.textColor,
-    this.showActionButton = false,
+    this.showActionButton = true,
     required this.title,
     this.buttonTitle = 'View All',
     this.onPressed,
@@ -18,20 +20,18 @@ class WSectionHeading extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.only(right: 20),
-      child: Row(
+    final dark = WHelperFunctions.isDarkMode(context);
+    return Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Text(
             title,
-            style: Theme.of(context).textTheme.headlineSmall!.apply(color: textColor),
+            style: Theme.of(context).textTheme.headlineSmall!.apply(color: dark ? WColors.white : textColor),
             maxLines: 1,
             overflow: TextOverflow.ellipsis,
           ),
-          if(showActionButton) TextButton(onPressed: (){}, child: Text(buttonTitle, style: TextStyle(color: textColor),))
+          if(showActionButton) TextButton(onPressed: (){}, child: Text(buttonTitle, style: TextStyle(color: WColors.primary),))
         ],
-      ),
     );
   }
 }

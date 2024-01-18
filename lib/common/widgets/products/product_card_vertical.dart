@@ -4,6 +4,8 @@ import 'package:w_store/common/styles/shadows.dart';
 import 'package:w_store/common/widgets/custom_shapes/containers/rounded_container.dart';
 import 'package:w_store/common/widgets/icons/circular_icon.dart';
 import 'package:w_store/common/widgets/images/rounded_image.dart';
+import 'package:w_store/common/widgets/texts/brand_title_text.dart';
+import 'package:w_store/common/widgets/texts/brand_title_text_with_verified_icon.dart';
 import 'package:w_store/common/widgets/texts/product_price_text.dart';
 import 'package:w_store/common/widgets/texts/product_title_text.dart';
 import 'package:w_store/utils/constants/colors.dart';
@@ -38,7 +40,7 @@ class WProductCardVertical extends StatelessWidget {
               child: Stack(
                 children: [
                   /// Thumbnail Image
-                  WRoundedImage(imageUrl: WImages.productImage1, applyImageRadius: true,),
+                  WRoundedImage(imageUrl: WImages.productImage1, applyImageRadius: true, fit: BoxFit.contain,),
 
                   /// Sale Tag
                   Positioned(
@@ -69,37 +71,34 @@ class WProductCardVertical extends StatelessWidget {
                 children: [
                   WProductTitleText(title: "Green Nike Air Shoes", smallSize: true,),
                   const SizedBox(height: WSizes.spaceBtwItems / 2,),
-                  Row(
-                    children: [
-                      Text("Nike", overflow: TextOverflow.ellipsis, maxLines: 1, style: Theme.of(context).textTheme.labelMedium,),
-                      const SizedBox(width: WSizes.xs,),
-                      Icon(Iconsax.verify5, color: WColors.primary, size: WSizes.iconXs,)
-                    ],
-                  ),
-                  //Spacer(),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      /// Price
-                      WProductPriceText(price: "35.0", isLarge: true,),
-                      Container(
-                        decoration: BoxDecoration(
-                          color: WColors.dark,
-                          borderRadius: BorderRadius.only(
-                            topLeft: Radius.circular(WSizes.cardRadiusMd),
-                            bottomRight: Radius.circular(WSizes.productImageRadius),
-                          )
-                        ),
-                        child: SizedBox(
-                          width: WSizes.iconLg * 1.2,
-                          height: WSizes.iconLg * 1.2,
-                          child: Center(child: Icon(Iconsax.add, color: WColors.white,))
-                        ),
-                      )
-                    ],
-                  )
+                  WBrandTitleTextWithVerifiedIcon(title: 'Nike',),
                 ],
               ),
+            ),
+            const Spacer(),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                /// Price
+                Padding(
+                  padding: const EdgeInsets.only(left: WSizes.sm),
+                  child: WProductPriceText(price: "35.0", isLarge: true,),
+                ),
+                Container(
+                  decoration: BoxDecoration(
+                      color: WColors.dark,
+                      borderRadius: BorderRadius.only(
+                        topLeft: Radius.circular(WSizes.cardRadiusMd),
+                        bottomRight: Radius.circular(WSizes.productImageRadius),
+                      )
+                  ),
+                  child: SizedBox(
+                      width: WSizes.iconLg * 1.2,
+                      height: WSizes.iconLg * 1.2,
+                      child: Center(child: Icon(Iconsax.add, color: WColors.white,))
+                  ),
+                )
+              ],
             )
           ],
         ),
@@ -107,5 +106,8 @@ class WProductCardVertical extends StatelessWidget {
     );
   }
 }
+
+
+
 
 
